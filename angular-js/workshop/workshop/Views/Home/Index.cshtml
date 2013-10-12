@@ -7,6 +7,9 @@
 	<h1>Test</h1>
 	<input type="text" class="form-control" ng-model="testo">
 	<label>Ciao {{testo}}</label>
-	
+
 	<input type="number" class="form-control" min="1" step="0.5" ng-model="prezzo">
+	<p>Prezzo {{prezzo *10}}</p>
 </div>
+
+@Html.ActionLink("Databinding samples", "DataBinding")

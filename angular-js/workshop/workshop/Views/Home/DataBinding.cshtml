@@ -1,0 +1,22 @@
+﻿@{
+	ViewBag.Title = "Databinding";
+}
+
+
+<div class="container" ng-controller="esempioCtrl">
+	<h1>Databinding samples</h1>
+	<input type="number" step="1" min="2" ng-model="quanti" />
+	@*ng-model="quanti" overrides value tag*@
+</div>
+
+@section outofbody
+{
+
+	<script>
+		//I want to assign this controller to a view with 'container' class by adding  ng-controller="esempioCtrl"
+		function esempioCtrl($scope) {
+			$scope.quanti = 5;
+		}
+
+	</script>
+}
