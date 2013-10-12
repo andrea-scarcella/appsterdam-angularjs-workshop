@@ -24,16 +24,23 @@
 		//should be put in a separate .js file, but it is overkill for a simple project like this
 		function todoCtrl($scope) {
 			$scope.note = [];
+
+			if (localStorage.getItem('AppsterdamNotes')) {
+				$scope.note = JSON.parse(localStorage.getItem('AppsterdamNotes'));
+			}
 			$scope.aggiungi = function () {
 				$scope.note.push($scope.nuova);
 				$scope.nuova = null;
 				//log input model
 				console.log($scope.nuova, $scope.note);
+				var string_data = JSON.stringify($scope.note);
+				localStorage.setItem('AppsterdamNotes', string_data);
 			};
 			$scope.rimuovi = function () {
 				var currentElem = this;
 				$scope.note.splice(currentElem.$index, 1);
-
+				var string_data = JSON.stringify($scope.note);
+				localStorage.setItem('AppsterdamNotes', string_data);
 			};
 		}
 	</script>
