@@ -10,7 +10,7 @@
 	<ul>
 		<li ng-repeat="elemento in voci">
 			@*problem when manipulating array length, solve it by adding 'track by $index' to ng-repeat*@
-			<h3>Title</h3>
+			<h3>Title {{$index}}</h3>
 			<p contenteditable>input here</p>
 			@*all tagss are contenteditable-enabled*@
 		</li>
@@ -22,6 +22,7 @@
 
 	<script>
 		var globalScope;
+		//called once, on page ready
 		//I want to assign this controller to a view with 'container' class by adding  ng-controller="esempioCtrl"
 		function esempioCtrl($scope) {
 			globalScope = $scope;
