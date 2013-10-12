@@ -470,6 +470,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DataBinding.cshtml" />
     <Content Include="Views\Home\CssSamples.cshtml" />
+    <Content Include="Views\Home\TodoList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

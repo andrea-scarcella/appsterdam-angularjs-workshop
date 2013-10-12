@@ -24,5 +24,9 @@ namespace workshop.Controllers
 		{
 			return View();
 		}
+		public ActionResult TodoList()
+		{
+			return View();
+		}
 	}
 }
