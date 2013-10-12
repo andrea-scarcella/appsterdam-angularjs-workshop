@@ -4,7 +4,7 @@
 
 
 
-<div class="container">
+<div class="container" ng-controller="todoCtrl">
 	<h1>Mini todo list app in AngularJs</h1>
 	<form action="/" method="post">
 		<input type="text" class="form-control" placeholder="Insert your note here" />
@@ -17,3 +17,13 @@
 	</p>
 	<p>Left <strong>0</strong></p>
 </div>
+
+@section outofbody
+{
+
+	<script>
+		function todoCtrl($scope) {
+
+		}
+	</script>
+}
