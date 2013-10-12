@@ -27,11 +27,15 @@
 		.animato
 		{
 			transition: all 0.5s ease;
+			opacity: 0;
+			-webkit-transform: scale(0) rotate(0deg);
 		}
 
 			.animato.appari
 			{
-				margin-left: 40px;
+				/*margin-left: 40px;*/
+				opacity: 1;
+				-webkit-transform: scale(1) rotate(360deg);
 			}
 	</style>
 
