@@ -5,7 +5,7 @@
 
 <div class="container" ng-controller="esempioCtrl">
 	<h1>Databinding samples</h1>
-	<input type="number" step="1" min="2" ng-model="quanti" ng-change="voci.length= quanti" />
+	<input type="number" step="1" min="2" ng-model="quanti" ng-change="aggiorna()" />
 	@*ng-model="quanti" overrides value tag*@
 	<ul>
 		<li ng-repeat="elemento in voci">
@@ -15,11 +15,23 @@
 			@*all tagss are contenteditable-enabled*@
 		</li>
 	</ul>
+	<p>
+		<input type="checkbox" ng-true-value="si" ng-false-value="no" ng-model="iscrivi">Subscribe to newsletter
+	</p>
+	<input type="email" class="form-control" ng-disabled="iscrivi == 'no'" />
+	@*using === raises an exception, but why?*@
+	<p>Select an issue:</p>
+	<p>
+		<input type="radio" ng-model="issue" value="noconn">no connection
+	</p>
+	<p>
+		<input type="radio" ng-model="issue" value="noboot">does not boot</p>
+
+	<p>Selected issue: {{issue}}</p>
 </div>
 
 @section outofbody
 {
-
 	<script>
 		var globalScope;
 		//called once, on page ready
@@ -29,8 +41,9 @@
 			$scope.voci = [];
 			$scope.quanti = Math.ceil(Math.random() * 5);
 			$scope.voci.length = $scope.quanti;
-
+			$scope.aggiorna = function aggiorna() {
+				$scope.voci.length = $scope.quanti;
+			};
 		}
-
 	</script>
 }
