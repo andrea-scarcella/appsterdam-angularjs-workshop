@@ -1,6 +1,27 @@
+
+<!DOCTYPE html>
 <html>
-<head></head>
+<head>
+	<meta charset="utf-8" />
+	
+	<title>Index</title>
+	
+	<script src="/libs/angularjs/angular.min.js"></script>
+	<link href="/libs/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
 <body>
-	<div class="container"></div>
+	
+
+<h2>Index</h2>
+<div class="container">
+	<h1>Test</h1>
+	<input type="text" class="form-control" ng-model="testo">
+	<label>Ciao {{testo}}</label>
+	
+	<input type="number" class="form-control" min="1" step="0.5" ng-model="prezzo">
+</div>
+
+
+
 </body>
 </html>
