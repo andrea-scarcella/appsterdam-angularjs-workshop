@@ -1,0 +1,38 @@
+﻿@{
+	ViewBag.Title = "CssSamples";
+}
+
+<div class="container">
+	<h1>CSS Styles</h1>
+	<p>
+		<input type="checkbox" class="form-control" ng-model="avviso" />Show notification
+	</p>
+	<div class="alert alert-warning" ng-show="avviso">
+		<p>Hi, I'm a notification!(checked)</p>
+	</div>
+
+	<div class="alert alert-success" ng-hide="avviso">
+		<p>Hi, I'm a notification!(unchecked)</p>
+	</div>
+	<p>
+		<input type="checkbox" ng-model="muovilo" ng-true-value="appari" />Show notification (animated)
+	</p>
+	<div class="alert alert-success animato {{muovilo}}">
+		<p>Hi, I'm a notification!(animated)</p>
+	</div>
+</div>
+
+@section inhead{
+	<style>
+		.animato
+		{
+			transition: all 0.5s ease;
+		}
+
+			.animato.appari
+			{
+				margin-left: 40px;
+			}
+	</style>
+
+}

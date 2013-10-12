@@ -20,5 +20,9 @@ namespace workshop.Controllers
 			return View();
 		}
 
+		public ActionResult CssSamples()
+		{
+			return View();
+		}
 	}
 }
