@@ -6,10 +6,10 @@
 
 <div class="container" ng-controller="todoCtrl">
 	<h1>Mini todo list app in AngularJs</h1>
-	<form action="/" method="post">
-		<input type="text" class="form-control" placeholder="Insert your note here" />
+	<form ng-submit="aggiungi()">
+		<input type="text" class="form-control" placeholder="Insert your note here" ng-model="nuova" />
 
-		<button class="btn btn-default btn-block">Add note</button>
+		<button class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>Add note</button>
 		@*<span class="glyphicon glyphicon-plus"></span>*@
 	</form>
 	<p>
@@ -22,8 +22,19 @@
 {
 
 	<script>
-		function todoCtrl($scope) {
 
+
+
+
+
+		//should be put in a separate .js file, but it is overkill for a simple project like this
+
+		function todoCtrl($scope) {
+			$scope.note = [];
+			$scope.aggiungi = function () {
+				//log input model
+				console.log($scope.nuova)
+			};
 		}
 	</script>
 }
