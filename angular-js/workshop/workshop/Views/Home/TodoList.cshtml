@@ -12,10 +12,10 @@
 		<button class="btn btn-default btn-block"><span class="glyphicon glyphicon-plus"></span>Add note</button>
 		@*<span class="glyphicon glyphicon-plus"></span>*@
 	</form>
-	<p>
-		<input type="checkbox">Filler
+	<p ng-repeat="nota in note">
+		<input type="checkbox">{{nota}}
 	</p>
-	<p>Left <strong>0</strong></p>
+	<p>Left <strong>{{note.length}}</strong></p>
 </div>
 
 @section outofbody
@@ -25,8 +25,10 @@
 		function todoCtrl($scope) {
 			$scope.note = [];
 			$scope.aggiungi = function () {
+				$scope.note.push($scope.nuova);
+				$scope.nuova = null;
 				//log input model
-				console.log($scope.nuova);
+				console.log($scope.nuova, $scope.note);
 			};
 		}
 	</script>
