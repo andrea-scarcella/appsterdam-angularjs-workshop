@@ -20,6 +20,14 @@
 	<div class="alert alert-success animato {{muovilo}}">
 		<p>Hi, I'm a notification!(animated)</p>
 	</div>
+
+	<p>
+		<input type="number" min="1" step="1" ng-model="pixel" />Show notification (dynamic css)
+	</p>
+
+	<div class="alert alert-success" style="margin-top: {{pixel}}px">
+		<p>Hi, I'm a notification!(Dynamic css)</p>
+	</div>
 </div>
 
 @section inhead{
@@ -29,6 +37,8 @@
 			transition: all 0.5s ease;
 			opacity: 0;
 			-webkit-transform: scale(0) rotate(0deg);
+			transform: rotateX(0deg);
+			-webkit-transform: rotateX(0deg); /* Safari and Chrome */
 		}
 
 			.animato.appari
@@ -36,6 +46,8 @@
 				/*margin-left: 40px;*/
 				opacity: 1;
 				-webkit-transform: scale(1) rotate(360deg);
+				transform: rotateX(360deg);
+				-webkit-transform: rotateX(360deg); /* Safari and Chrome */
 			}
 	</style>
 
